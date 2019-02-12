@@ -38,7 +38,7 @@ void setup() {
   //fill(0, 0, 255);
 
   
-  rock = loadImage("fire rock.png");
+  rock = loadImage("fire rock2.png");
 }
 
 void draw() {
