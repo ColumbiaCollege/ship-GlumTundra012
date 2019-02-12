@@ -6,7 +6,6 @@ float xPos =0;
 float yPos = 0;
 float xSpeed =0;
 float ySpeed =0;
-float position =0;
 
 
 //Booleans for movement
@@ -19,18 +18,18 @@ boolean down = false;
 PImage rock;
 PImage Space;
 
- 
+
 
 void setup() {
   //window modifications
   size(1200, 700);
   Space = loadImage("Space.png");
   imageMode(CENTER);
- 
-  
+
+
   //draws an image 'Space' at 
-  image(Space,width/2,height/2,width,height);
-  
+  image(Space, width/2, height/2, width, height);
+
   //initial position
   xPos = width/2;
   yPos = height/2;
@@ -39,22 +38,21 @@ void setup() {
   //noStroke();
   //fill(0, 0, 255);
 
-  
+
   rock = loadImage("fire rock.png");
 }
 
 void draw() {
   //wipe background
-  image(Space,width/2,height/2,width,height);
-  position = height/2;
+  image(Space, width/2, height/2, width, height);
 
   //update spped
   if (left) {
-    //xPos = xPos -3;
+
     xSpeed = xSpeed -1;
   }
   if (right) {
-    //xPos = xPos +3;
+
     xSpeed = xSpeed +1;
   }
   if (up) {
@@ -65,15 +63,18 @@ void draw() {
   }
   //update postition
   xPos = xPos + xSpeed;
-  
+
   // my attempt at screenwrap
-  if (position > height+50){
-   position = -50; 
+  if (yPos > height+50){
+  yPos = -50; 
   }
-  
+  if (xPos < 0){
+  xPos = -50; 
+  }
+
 
   //draw shape
-  image(rock, xPos, yPos, 300,300);
+  image(rock, xPos, yPos, 300, 300);
 }
 
 
@@ -83,13 +84,13 @@ void keyPressed() {
   if (key == 'w' || keyCode == UP) {
     up = true;
   }
-  if (key == 'a' || keyCode == LEFT){
+  if (key == 'a' || keyCode == LEFT) {
     left = true;
   }
   if (key == 's' || keyCode == DOWN) {
     down = true;
   }  
-  if (key == 'd' || keyCode == RIGHT){
+  if (key == 'd' || keyCode == RIGHT) {
     right = true;
   }
 }
@@ -99,13 +100,13 @@ void keyReleased() {
   if (key == 'w' || keyCode == UP) {
     up = false;
   }
-  if (key == 'a' || keyCode == LEFT){
+  if (key == 'a' || keyCode == LEFT) {
     left = false;
   }
   if (key == 's' || keyCode == DOWN) {
     down = false;
   }  
-  if (key == 'd' || keyCode == RIGHT){
+  if (key == 'd' || keyCode == RIGHT) {
     right = false;
   }
 }
