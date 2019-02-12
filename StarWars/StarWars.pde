@@ -22,7 +22,10 @@ void setup() {
   //window modifications
   size(1200, 700);
   Space = loadImage("Space.png");
-  image(Space,width,height);
+  imageMode(CENTER);
+  
+  //draws an image 'Space' at 
+  image(Space,width/2,height/2,width,height);
   
   //initial position
   xPos = width/2;
@@ -32,11 +35,13 @@ void setup() {
   //noStroke();
   //fill(0, 0, 255);
 
-  imageMode(CENTER);
+  
   rock = loadImage("fire rock.png");
 }
+
 void draw() {
-  //wipe
+  //wipe background
+  image(Space,width/2,height/2,width,height);
 
   //update position
   if (left) {
