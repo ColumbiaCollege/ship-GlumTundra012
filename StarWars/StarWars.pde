@@ -4,6 +4,8 @@
 
 float xPos =0;
 float yPos = 0;
+float xSpeed =0;
+float ySpeed =0;
 
 
 //Booleans for movement
@@ -43,12 +45,14 @@ void draw() {
   //wipe background
   image(Space,width/2,height/2,width,height);
 
-  //update position
+  //update spped
   if (left) {
-    xPos = xPos -3;
+    //xPos = xPos -3;
+    xSpeed = xSpeed -1;
   }
   if (right) {
-    xPos = xPos +3;
+    //xPos = xPos +3;
+    xSpeed = xSpeed +1;
   }
   if (up) {
     yPos = yPos -3;
@@ -56,6 +60,9 @@ void draw() {
   if (down) {
     yPos = yPos +3;
   }
+  //update postition
+  xPos = xPos + xSpeed;
+  
 
   //draw shape
   image(rock, xPos, yPos, 300,300);
