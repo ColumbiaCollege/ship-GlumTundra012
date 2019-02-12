@@ -6,6 +6,7 @@ float xPos =0;
 float yPos = 0;
 float xSpeed =0;
 float ySpeed =0;
+float position =0;
 
 
 //Booleans for movement
@@ -25,6 +26,7 @@ void setup() {
   size(1200, 700);
   Space = loadImage("Space.png");
   imageMode(CENTER);
+ 
   
   //draws an image 'Space' at 
   image(Space,width/2,height/2,width,height);
@@ -44,6 +46,7 @@ void setup() {
 void draw() {
   //wipe background
   image(Space,width/2,height/2,width,height);
+  position = height/2;
 
   //update spped
   if (left) {
@@ -55,13 +58,18 @@ void draw() {
     xSpeed = xSpeed +1;
   }
   if (up) {
-    yPos = yPos -3;
+    yPos = yPos -10;
   }
   if (down) {
-    yPos = yPos +3;
+    yPos = yPos +10;
   }
   //update postition
   xPos = xPos + xSpeed;
+  
+  // my attempt at screenwrap
+  if (position > height+50){
+   position = -50; 
+  }
   
 
   //draw shape
