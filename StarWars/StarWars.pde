@@ -65,34 +65,32 @@ void draw() {
 
 void keyPressed() {
 
-  if (key == 'w') {
+  if (key == 'w' || keyCode == UP) {
     up = true;
   }
-  if (key == 'a')
+  if (key == 'a' || keyCode == LEFT){
     left = true;
-  {
   }
-  if (key == 's') {
+  if (key == 's' || keyCode == DOWN) {
     down = true;
   }  
-  if (key == 'd')
+  if (key == 'd' || keyCode == RIGHT){
     right = true;
-  {
   }
 }
 
 void keyReleased() {
 
-  if (key == 'w') {
+  if (key == 'w' || keyCode == UP) {
     up = false;
   }
-  if (key == 'a') {
+  if (key == 'a' || keyCode == LEFT){
     left = false;
   }
-  if (key == 's') {
+  if (key == 's' || keyCode == DOWN) {
     down = false;
-  }
-  if (key == 'd') {
+  }  
+  if (key == 'd' || keyCode == RIGHT){
     right = false;
   }
 }
